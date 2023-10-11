@@ -46,11 +46,11 @@ const Home = () => {
             Transaction History Page
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/paysomeonebybank30webfeeling">
             Pay Someone By Bank Page
           </Link>
-        </li>
+        </li> */}
         {/* <li>
           <Link to="/paysomeonebybanksuccessful30webfeeling">
             PaySomeoneByBankSuccessful30WebFeeling
@@ -66,16 +66,16 @@ const Home = () => {
             PaySomeoneByBankRecentTransaction30WebFeeling
           </Link>
         </li> */}
-        {/* <li>
+         <li>
           <Link to="/paysomeonebybankerrorfield30webfeeling">
-            PaySomeoneByBankErrorField30WebFeeling
+            Pay Someone By Bank Account
           </Link>
-        </li> */}
-        <li>
+        </li> 
+        {/* <li>
           <Link to="/paysomeonebypayid30webfeeling">
             Pay Someone By Pay ID
           </Link>
-        </li>
+        </li> */}
         {/* <li>
           <Link to="/addtofavourites30webfeeling">
             AddtoFavourites30WebFeeling

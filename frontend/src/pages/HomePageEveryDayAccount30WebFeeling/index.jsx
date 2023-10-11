@@ -5,7 +5,7 @@ import { Img, Line, List, Text } from "components";
 const HomePageEveryDayAccount30WebFeelingPage = () => {
   const navigate = useNavigate();
   const handlePayClick = () => {
-    navigate('/paysomeonebybank30webfeeling');
+    navigate('/paysomeonebybankerrorfield30webfeeling');
   }
   const handleTransactionHistoryClick = () => {
     navigate('/transactionhistory30webfeeling');
@@ -21,6 +21,9 @@ const HomePageEveryDayAccount30WebFeelingPage = () => {
   }
   const handleTransactionAnalyticsClick = () => {
     navigate('/transactionanalytics30webfeeling');
+  }
+  const handleChatbotClick = () => {
+    navigate('/chatbotpage30webfeeling');
   }
   return (
     <>
@@ -50,7 +53,8 @@ const HomePageEveryDayAccount30WebFeelingPage = () => {
             </Text>
           </div>
           <div className="flex md:flex-col flex-row font-poppins md:gap-10 items-center justify-between my-[0px] max-w-[2228px] mt-2.5 mx-auto md:px-5 w-[90%] h-[260px]">
-            <div className="bg-white-A700 border-[5px] border-light_blue-900 border-solid flex md:flex-1 sm:flex-col flex-row sm:gap-5 items-start justify-end mb-[20px] md:mt-0 mt-[22px] p-2.5 rounded-[50px] shadow-bs3 w-[33%] md:w-full my-[0px]">
+            <div className="bg-white-A700 border-[5px] border-light_blue-900 border-solid flex md:flex-1 sm:flex-col flex-row sm:gap-5 items-start justify-end mb-[20px] md:mt-0 mt-[22px] p-2.5 rounded-[50px] shadow-bs3 w-[33%] md:w-full my-[0px]"
+            onClick={handleChatbotClick}>
               <Img
                 className="h-[160px] md:h-auto sm:mt-0 mt-4 object-cover w-[160px]"
                 src="images/img_ai28146662.png"

@@ -17,13 +17,15 @@ function generateToken(userId) {
 
 function extractUserId(req, res, next) {
   // Get the token from the request headers, assuming it's in the 'Authorization' header
-  const token = req.headers.authorization.split(" ")[1];
+  const authorizationHeader = req.headers.authorization;
+  console.log("authorization header:",authorizationHeader)
 
-  // Check if the token is provided
-  if (!token) {
+  if (!authorizationHeader) {
     return res.status(401).json({ message: 'Authentication token is missing' });
   }
 
+  const token = authorizationHeader.split(" ")[1];
+  console.log("token: ",token)
   try {
     // Verify and decode the token using your secret key
     const decoded = jwt.verify(token, secretKey);
@@ -38,5 +40,6 @@ function extractUserId(req, res, next) {
     return res.status(401).json({ message: 'Invalid or expired token' });
   }
 }
+
 
 module.exports = { extractUserId, generateToken };

@@ -1,8 +1,24 @@
 import React from "react";
-
+import { useNavigate } from 'react-router-dom';
 import { Img, Line, Text } from "components";
 
 const HomePageSavingsAccount30WebFeelingPage = () => {
+  const navigate = useNavigate();
+  const handlePayClick = () => {
+    navigate('/paysomeonebybank30webfeeling');
+  }
+  const handleTransactionHistoryClick = () => {
+    navigate('/transactionhistory30webfeeling');
+  }
+  const handleViewProfileClick = () => {
+    navigate('/viewprofile30webfeeling');
+  }
+  const handleTransactionAnalyticsClick = () => {
+    navigate('/transactionanalytics30webfeeling');
+  }
+  const handleChatbotClick = () => {
+    navigate('/chatbotpage30webfeeling');
+  }
   return (
     <>
       <div className="bg-white-A700 flex flex-col font-poppins items-center justify-start mx-auto pb-[168px] w-full">
@@ -30,15 +46,17 @@ const HomePageSavingsAccount30WebFeelingPage = () => {
               Logout
             </Text>
           </div>
-          <div className="flex md:flex-col flex-row md:gap-10 items-center justify-between max-w-[2228px] mt-2.5 mx-auto md:px-5 w-full">
-            <div className="bg-white-A700 border-[5px] border-light_blue-900 border-solid flex md:flex-1 sm:flex-col flex-row sm:gap-5 items-start justify-end mb-[31px] md:mt-0 mt-[22px] p-2.5 rounded-[50px] shadow-bs3 w-[28%] md:w-full">
+          <div className="flex md:flex-col flex-row font-poppins md:gap-10 items-center justify-between my-[0px] max-w-[2228px] mt-2.5 mx-auto md:px-5 w-[90%] h-[260px]">
+            <div className="bg-white-A700 border-[5px] border-light_blue-900 border-solid flex md:flex-1 sm:flex-col flex-row sm:gap-5 items-start justify-end mb-[20px] md:mt-0 mt-[22px] p-2.5 rounded-[50px] shadow-bs3 w-[33%] md:w-full my-[0px]"
+            onClick={handleChatbotClick}>
               <Img
-                className="h-[216px] md:h-auto sm:mt-0 mt-4 object-cover w-[216px]"
+                className="h-[160px] md:h-auto sm:mt-0 mt-4 object-cover w-[160px]"
                 src="images/img_ai28146662.png"
                 alt="ai28146662"
               />
+              <div>
               <Text
-                className="sm:mt-0 my-[15px] sm:text-4xl md:text-[38px] text-[40px] text-black-900 text-center text-shadow-ts"
+                className="sm:mt-0 my-[10px] sm:text-4xl md:text-[25px] text-[28px] text-black-900 text-center text-shadow-ts"
                 size="txtPoppinsBold40"
               >
                 <>
@@ -46,36 +64,47 @@ const HomePageSavingsAccount30WebFeelingPage = () => {
                   Chat Bot
                   <br />
                   <br />
-                  Get Instant Help!
                 </>
               </Text>
+              <div>
+            <Text
+                className="sm:mt-0 my-[10px] sm:text-4xl md:text-[25px] text-[28px] text-black-900 text-center text-shadow-ts"
+                size="txtPoppinsBold40"
+              >
+             Get Instant Help!
+
+              </Text>
             </div>
-            <div className="flex md:flex-1 md:flex-col flex-row md:gap-10 items-start justify-between w-[61%] md:w-full">
-              <div className="bg-white-A700 flex flex-col items-center justify-start md:mt-0 mt-[29px] p-[9px] shadow-bs4">
-                <div className="flex flex-col gap-[35px] justify-start mb-6 w-[92%] md:w-full">
-                  <div className="flex sm:flex-col flex-row gap-[59px] items-start justify-start mr-[51px] w-[92%] md:w-full">
+             
+              </div>
+
+            </div>
+            <div className="flex md:flex-1 flex-row md:gap-10 items-start justify-between w-[55%] md:w-full">
+              <div className="bg-white-A700 flex flex-col items-start justify-start md:mt-0 mt-[10px] p-[9px] shadow-bs4">
+                <div className="flex flex-col gap-[0px] justify-start mb-6 ml-0 md:ml-[0] w-[95%] md:w-full">
+                  <div className="flex sm:flex-col flex-row gap-[0px] items-start justify-start w-full">
                     <Img
-                      className="h-[82px] mb-[21px]"
+                      className="h-[70px] "
                       src="images/img_iconwallet.svg"
                       alt="iconwallet"
                     />
                     <Text
-                      className="sm:mt-0 mt-[29px] sm:text-[40px] md:text-[46px] text-[50px] text-center text-light_blue-900"
+                      className="sm:mt-0 mt-[29px] sm:text-[40px] md:text-[30px] text-[32px] text-center text-light_blue-900"
                       size="txtPoppinsSemiBold50"
                     >
                       Current Balance
                     </Text>
                   </div>
                   <Text
-                    className="ml-28 md:ml-[0] md:text-5xl text-[100px] text-center text-light_blue-900"
+                    className="md:ml-[0] ml-[174px] md:text-5xl text-[50px] text-center text-light_blue-900"
                     size="txtPoppinsSemiBold100"
                   >
-                    $2,540.54
+                    $2,198
                   </Text>
                 </div>
               </div>
               <Img
-                className="h-[353px] md:h-auto mb-2.5 rounded-[50%] w-[353px]"
+                className="h-[125px] md:h-auto mb-2.5 rounded-[50%] w-[125px] mx-"
                 src="images/img_ellipse20.png"
                 alt="ellipseTwenty"
               />
@@ -102,7 +131,7 @@ const HomePageSavingsAccount30WebFeelingPage = () => {
               </div>
               <Line className="bg-light_blue-900 h-[5px] md:ml-[0] ml-[341px] mr-[1407px] w-1/4" />
               <div className="flex md:flex-col flex-row font-jost md:gap-10 items-center justify-between md:ml-[0] ml-[451px] mt-[220px] w-[66%] md:w-full">
-                <div className="h-[530px] relative w-[39%] md:w-full">
+                <div className="h-[530px] relative w-[39%] md:w-full" onClick={handlePayClick}>
                   <div className="h-[530px] m-auto w-full">
                     <div className="bg-white-A700 h-[530px] m-auto rounded-[293px] shadow-bs7 w-full"></div>
                     <Line className="absolute bg-black-900 bottom-[33%] h-px inset-x-[0] mx-auto w-[72%]" />
@@ -121,7 +150,7 @@ const HomePageSavingsAccount30WebFeelingPage = () => {
                     </Text>
                   </div>
                 </div>
-                <div className="h-[508px] relative w-[39%] md:w-full">
+                <div className="h-[508px] relative w-[39%] md:w-full" onClick={handleTransactionHistoryClick}>
                   <div className="bg-white-A700 h-[508px] m-auto rounded-[295px] shadow-bs7 w-full"></div>
                   <div className="absolute flex flex-col inset-x-[0] items-center justify-start mx-auto top-[5%] w-[72%]">
                     <Img
@@ -140,7 +169,7 @@ const HomePageSavingsAccount30WebFeelingPage = () => {
                 </div>
               </div>
               <div className="flex md:flex-col flex-row font-jost md:gap-10 items-center justify-between md:ml-[0] ml-[437px] mt-[280px] w-[67%] md:w-full">
-                <div className="h-[508px] relative w-[38%] md:w-full">
+                <div className="h-[508px] relative w-[38%] md:w-full" onClick={handleTransactionAnalyticsClick}>
                   <div className="bg-white-A700 h-[508px] m-auto rounded-[295px] shadow-bs7 w-full"></div>
                   <div className="absolute flex flex-col gap-[23px] inset-x-[0] items-center justify-start mx-auto top-[4%] w-4/5">
                     <Img
@@ -159,7 +188,7 @@ const HomePageSavingsAccount30WebFeelingPage = () => {
                     </div>
                   </div>
                 </div>
-                <div className="h-[508px] relative w-[38%] md:w-full">
+                <div className="h-[508px] relative w-[38%] md:w-full" onClick={handleViewProfileClick}>
                   <div className="bg-white-A700 h-[508px] m-auto rounded-[295px] shadow-bs7 w-full"></div>
                   <div className="absolute flex flex-col inset-x-[0] justify-start mx-auto top-[4%] w-4/5">
                     <Img

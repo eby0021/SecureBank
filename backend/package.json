@@ -15,6 +15,7 @@
     "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.6.1",
     "sequelize": "^6.33.0",
-    "tedious": "^16.4.1"
+    "tedious": "^16.4.1",
+    "uuid": "^9.0.1"
   }
 }

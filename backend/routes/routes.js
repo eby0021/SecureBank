@@ -20,11 +20,7 @@ router.get('/account/balance', (req, res) => {
 });
 
 // Route for sending money to another user
-router.post('/send-money', (req, res) => {
-
- 
-  res.json({ message: 'Money sent successfully' });
-});
+router.post('/send-money', extractUserId, userController.sendMoney);
 
 
 router.post('/pay-bill', (req, res) => {

@@ -5,7 +5,7 @@ import { Img, Line, List, Text } from "components";
 const HomePageEveryDayAccount30WebFeelingPage = () => {
   const navigate = useNavigate();
   const handlePayClick = () => {
-    navigate('/paysomeonebybankerrorfield30webfeeling');
+    navigate('/transferForSavings');
   }
   const handleTransactionHistoryClick = () => {
     navigate('/transactionhistory30webfeeling');

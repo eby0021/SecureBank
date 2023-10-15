@@ -70,6 +70,8 @@ const SignupPayIDCheckedPage30 = React.lazy(() =>
 const SignupPage30 = React.lazy(() => import("pages/SignupPage30"));
 const BPAY = React.lazy(() => import("pages/BPAY"));
 const Transfer = React.lazy(() => import("pages/Transfer"));
+const TransferForSavings = React.lazy(() => import("pages/TransferForSavings"));
+
 
 const ProjectRoutes = () => {
   return (
@@ -86,6 +88,7 @@ const ProjectRoutes = () => {
           <Route path="/loginpage30" element={<LoginPage30 />} />
           <Route path="/bpay" element={<BPAY />} />
           <Route path="/transfer" element={<Transfer />} />
+          <Route path="/transferForSavings" element={<TransferForSavings />} />
           <Route
             path="/loginpagerecaptcha30"
             element={<LoginPagereCaptcha30 />}

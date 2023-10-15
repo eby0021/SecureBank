@@ -25,6 +25,10 @@ const HomePageEveryDayAccount30WebFeelingPage = () => {
   const handleChatbotClick = () => {
     navigate('/chatbotpage30webfeeling');
   }
+  const handleLogoutClick = () => {
+    alert('user has been logged out')
+    navigate('/loginpage30')
+  }
   return (
     <>
       <div className="bg-white-A700 flex flex-col items-center justify-start mx-auto pb-[168px] w-full">
@@ -40,17 +44,18 @@ const HomePageEveryDayAccount30WebFeelingPage = () => {
               </div>
             </div>
             <Text
-              className="absolute h-max inset-y-[0] left-[2%] my-auto md:text-5xl text-[64px] text-white-A700 underline"
+              className="absolute h-max inset-y-[0] left-[2%] my-auto md:text-5xl text-[64px] text-white-A700 "
               size="txtPoppinsRegular64"
             >
               Secure Bank
             </Text>
-            <Text
-              className="absolute bottom-[0] right-[14%] md:text-5xl text-[64px] text-white-A700 underline"
+            <button
+              className="absolute bottom-[0] right-[14%] md:text-5xl text-[64px] text-white-A700"
               size="txtPoppinsRegular64"
+              onClick={handleLogoutClick}
             >
               Logout
-            </Text>
+            </button>
           </div>
           <div className="flex md:flex-col flex-row font-poppins md:gap-10 items-center justify-between my-[0px] max-w-[2228px] mt-2.5 mx-auto md:px-5 w-[90%] h-[260px]">
             <div className="bg-white-A700 border-[5px] border-light_blue-900 border-solid flex md:flex-1 sm:flex-col flex-row sm:gap-5 items-start justify-end mb-[20px] md:mt-0 mt-[22px] p-2.5 rounded-[50px] shadow-bs3 w-[33%] md:w-full my-[0px]"
@@ -86,8 +91,8 @@ const HomePageEveryDayAccount30WebFeelingPage = () => {
 
             </div>
             <div className="flex md:flex-1 flex-row md:gap-10 items-start justify-between w-[55%] md:w-full">
-              <div className="bg-white-A700 flex flex-col items-start justify-start md:mt-0 mt-[10px] p-[9px] shadow-bs4">
-                <div className="flex flex-col gap-[0px] justify-start mb-6 ml-0 md:ml-[0] w-[95%] md:w-full">
+              <div className="bg-white-A700 flex flex-col items-start justify-start md:mt-0 mt-[10px] p-[15px] shadow-bs4 ml-[360px]">
+                <div className="flex flex-col gap-[0px] justify-start mb-6 ml-0 md:ml-[0] w-[100%] md:w-full h-[180px]">
                   <div className="flex sm:flex-col flex-row gap-[0px] items-start justify-start w-full">
                     <Img
                       className="h-[70px] "
@@ -109,48 +114,66 @@ const HomePageEveryDayAccount30WebFeelingPage = () => {
                   </Text>
                 </div>
               </div>
-              <Img
+              {/* <Img
                 className="h-[125px] md:h-auto mb-2.5 rounded-[50%] w-[125px] mx-"
                 src="images/img_ellipse20.png"
                 alt="ellipseTwenty"
-              />
+              /> */}
             </div>
           </div>
-          <Line className="bg-black-900_72 h-0.5 max-w-[2144px] mt-[49px] mx-auto w-full" />
-          <div className="flex md:flex-col flex-row font-poppins md:gap-10 items-center justify-center max-w-[2291px] mt-7 mx-auto md:px-5 w-full">
-            <div className="flex flex-col md:gap-10 gap-[171px] items-center justify-start md:mt-0 mt-[50px]">
-              <div className="flex md:flex-col flex-row gap-[22px] items-start justify-start w-[89%] md:w-full">
-                <div className="flex flex-col justify-center items-center mb-[9px] w-[58%] md:w-full">
-                <div className="flex sm:flex-col flex-row sm:gap-5 items-center justify-center w-full">
-                    <div className="bg-light_blue-900 border-2 border-light_blue-900 border-solid h-[30px] sm:mt-0 my-2.5 rounded-[45px] shadow-bs5 w-[12%]">
-                    </div>
-                    <Text
-                      className="ml-100 sm:ml-[0] md:text-2.5xl text-3xl text-black-900 text-center text-shadow-ts1 mx-25 w-[100%]"
-                      size="txtPoppinsMedium60"
-                    >
-                      In Every Day Account
-                    </Text>
-                    <div className="bg-white border-2 border-light_blue-900 border-solid h-[30px] sm:mt-0 my-2.5 rounded-[45px] shadow-bs5 w-[12%]">
-                    </div>
-                  </div>
-                  {/* <Line className="bg-light_blue-900 h-[5px] md:ml-[0] ml-[0px] mr-[357px] w-[40%]" /> */}
-                </div>
-                
-                <Text
-                  className="ml-6 md:mt-0 mt-3.5 md:text-2.5xl text-3xl text-black-900 text-center text-shadow-ts1 mx-25"
-                  size="txtPoppinsMedium60"
-                >
-                  Switch to Savings Account
-                </Text>
-              </div>
+          <Line className="bg-black-900_72 h-0.5 max-w-[2144px] mt-[20px] mx-auto w-full" />
+          <div className="flex md:flex-col flex-row font-poppins md:gap-10 items-center justify-center max-w-[2291px] mt-0 mx-auto md:px-5 w-full">
+            <div className="flex flex-col md:gap-10 gap-[171px] items-center justify-start md:mt-0 mt-[30px]">
+              {/* <div className="flex md:flex-col flex-row gap-[22px] items-start justify-start w-[100%] md:w-full"> */}
+
+
+
+  <div className="flex flex-col justify-center items-center mb-[0px] w-[100%] md:w-full">
+  <div className="flex sm:flex-col flex-row sm:gap-5 items-center justify-center w-full">
+    <label className="radio-button-container">
+      <input type="radio" name="accountType" value="everyDay" 
+        onChange={() => {
+          navigate('/homepageeverydayaccount30webfeeling'); 
+        }} defaultChecked/>
+      <div className="radio-button">
+      </div>
+    </label>
+    <Text
+      className="ml-100 sm:ml-[0] md:text-2.5xl text-3xl text-black-900 text-center text-shadow-ts1 mx-15 w-[100%]"
+      size="txtPoppinsMedium60"
+    >
+      In Every Day Account
+    </Text>
+    <label className="radio-button-container">
+      <input type="radio" name="accountType" value="savings"
+         onChange={() => {
+          navigate('/homepagesavingsaccount30webfeeling'); 
+        }}
+         />
+      <div className="radio-button">
+      </div>
+    </label>
+    <Text
+      className="ml-6 md:mt-0 mt-3.5 md:text-2.5xl text-3xl text-black-900 text-center text-shadow-ts1 mx-15 w-[100%]"
+      size="txtPoppinsMedium60"
+    >
+      Switch to Savings Account
+    </Text>
+  </div>
+</div>
+
+
+
+
+              {/* </div> */}
               <List
                 className="flex flex-col font-jost gap-[16px] items-center w-full"
                 orientation="vertical"
               >
-                <div className="flex flex-1 md:flex-col flex-row md:gap-2 items-start justify-start w-full mx-10">
-                  <div className="h-[508px] relative w-[100%] md:w-full"   onClick={handleCardClick}>
-                    <div className="bg-white-A700 h-[250px] m-auto rounded-[400px] shadow-bs7 w-full"></div>
-                    <div className="absolute flex flex-col inset-x-[0] items-center justify-start mx-auto top-[0%] w-[100%]">
+                <div className="flex flex-1 md:flex-col flex-row md:gap-2 items-start justify-start w-full mx-0">
+                  <div className="h-[320px] relative w-[100%] md:w-full"   onClick={handleCardClick}>
+                    <div className="bg-white-A700 h-[250px] m-auto rounded-[400px] shadow-bs7 w-[240px]"></div>
+                    <div className="absolute flex flex-col inset-x-[0] items-center justify-start mx-auto top-[0%] w-[70%]">
                       <Img
                         className="h-[100px] mt-6"
                         src="images/img_iconcards.svg"
@@ -165,9 +188,9 @@ const HomePageEveryDayAccount30WebFeelingPage = () => {
                       </Text>
                     </div>
                   </div>
-                  <div className="h-[508px] relative w-[100%] md:w-full mx-10" onClick={handlePayClick}>
-                    <div className="bg-white-A700 h-[250px] m-auto rounded-[400px] shadow-bs7 w-full"></div>
-                    <div className="absolute flex flex-col inset-x-[0] items-center justify-start mx-auto top-[0%] w-[100%]">
+                  <div className="h-[320px] relative w-[100%] md:w-full mx-10 ml-[80px]" onClick={handlePayClick} >
+                    <div className="bg-white-A700 h-[250px] m-auto rounded-[400px] shadow-bs7 w-[240px]"></div>
+                    <div className="absolute flex flex-col inset-x-[0] items-center justify-start mx-auto top-[0%] w-[70%]">
                       <Img
                         className="h-[100px] mt-6"
                         src="images/img_iconmoneyrecive.svg"
@@ -182,26 +205,9 @@ const HomePageEveryDayAccount30WebFeelingPage = () => {
                       </Text>
                     </div>
                   </div>
-                  {/* <div className="h-[530px] ml-56 md:ml-[0] relative w-[27%] md:w-full">
-                    <div className="bg-white-A700 h-[530px] m-auto rounded-[293px] shadow-bs7 w-full"></div>
-                    <div className="absolute flex flex-col inset-x-[0] justify-start mx-auto top-[8%] w-[72%]">
-                      <Img
-                        className="h-[294px] md:ml-[0] ml-[60px]"
-                        src="images/img_iconmoneyrecive.svg"
-                        alt="iconmoneyrecive"
-                      />
-                      <Line className="bg-black-900 h-px mt-[19px] w-full" />
-                      <Text
-                        className="md:ml-[0] ml-[150px] mt-[33px] sm:text-[40px] md:text-[46px] text-[50px] text-black-900"
-                        size="txtJostRomanBold50"
-                      >
-                        Pay{" "}
-                      </Text>
-                    </div>
-                  </div> */}
-                  <div className="h-[350px] relative w-[100%] md:w-full mx-10" onClick={handleTransactionHistoryClick}>
-                    <div className="bg-white-A700 h-[250px] m-auto rounded-[400px] shadow-bs7 w-full"></div>
-                    <div className="absolute flex flex-col inset-x-[0] items-center justify-center mx-auto top-[0%] w-[100%]">
+                  <div className="h-[320px] relative w-[100%] md:w-full mx-10" onClick={handleTransactionHistoryClick}>
+                    <div className="bg-white-A700 h-[250px] m-auto rounded-[400px] shadow-bs7 w-[240px]"></div>
+                    <div className="absolute flex flex-col inset-x-[0] items-center justify-center mx-auto top-[0%] w-[70%]">
                       <Img
                         className="h-[100px] mt-6"
                         src="images/img_iconwallet_light_blue_800.svg"
@@ -209,14 +215,15 @@ const HomePageEveryDayAccount30WebFeelingPage = () => {
                       />
                       <Line className="bg-black-900 h-px mt-[43px] w-[75%]" />
                       <Text
-                        className="mt-2 sm:text-[37px] md:text-[43px] text-[19px] text-black-900"
+                        className="mt-2 sm:text-[37px] md:text-[43px] text-[25px] text-black-900 text-center"
                         size="txtJostRomanBold47"
                       >
-                        Transaction History
+                        Transaction
+                        <br></br> History
                       </Text>
                     </div>
                   </div>
-                  
+
                   {/* <div className="h-[508px] md:ml-[0] ml-[181px] relative w-[28%] md:w-full">
                     <div className="bg-white-A700 h-[508px] m-auto rounded-[295px] shadow-bs7 w-full"></div>
                     <div className="absolute flex flex-col inset-x-[0] items-center justify-start mx-auto top-[5%] w-[72%]">
@@ -235,8 +242,9 @@ const HomePageEveryDayAccount30WebFeelingPage = () => {
                     </div>
                   </div> */}
                 </div>
-                <div className="flex flex-1 md:flex-col flex-row md:gap-2 items-center justify-between w-full" >
-                <div className="h-[508px] relative w-[100%] md:w-full mx-10" onClick={handleBillPaymentClick}>
+
+                <div className="flex flex-1 md:flex-col flex-row md:gap-2 items-center justify-center w-full" >
+                {/* <div className="h-[508px] relative w-[100%] md:w-full mx-10" onClick={handleBillPaymentClick}>
                     <div className="bg-white-A700 h-[250px] m-auto rounded-[400px] shadow-bs7 w-full"></div>
                     <div className="absolute flex flex-col inset-x-[0] items-center justify-start mx-auto top-[0%] w-[100%]">
                       <Img
@@ -252,10 +260,10 @@ const HomePageEveryDayAccount30WebFeelingPage = () => {
                         Bill Payment
                       </Text>
                     </div>
-                  </div>
+                  </div> */}
                   <div className="h-[508px] relative w-[100%] md:w-full mx-10" onClick={handleTransactionAnalyticsClick}>
-                    <div className="bg-white-A700 h-[250px] m-auto rounded-[400px] shadow-bs7 w-full"></div>
-                    <div className="absolute flex flex-col inset-x-[0] items-center justify-start mx-auto top-[0%] w-[100%]">
+                    <div className="bg-white-A700 h-[250px] m-auto rounded-[400px] shadow-bs7 w-[240px]"></div>
+                    <div className="absolute flex flex-col inset-x-[0] items-center justify-start mx-auto top-[0%] w-[70%]">
                       <Img
                         className="h-[100px] mt-6"
                         src="images/img_iconchart3.svg"
@@ -263,16 +271,16 @@ const HomePageEveryDayAccount30WebFeelingPage = () => {
                       />
                       <Line className="bg-black-900 h-px mt-[43px] w-[75%]" />
                       <Text
-                        className="mt-2 sm:text-[37px] md:text-[43px] text-[22px] text-black-900 ml-10 mb-6"
+                        className="mt-0 sm:text-[37px] md:text-[43px] text-[25px] text-black-900 text-center "
                         size="txtJostRomanBold47"
                       >
-                        Transaction Analytics
+                        Transaction <br/>Analytics
                       </Text>
                     </div>
                   </div>
                   <div className="h-[508px] relative w-[100%] md:w-full mx-10" onClick={handleViewProfileClick}>
-                    <div className="bg-white-A700 h-[250px] m-auto rounded-[400px] shadow-bs7 w-full"></div>
-                    <div className="absolute flex flex-col inset-x-[0] items-center justify-start mx-auto top-[0%] w-[100%]">
+                    <div className="bg-white-A700 h-[250px] m-auto rounded-[400px] shadow-bs7 w-[240px]"></div>
+                    <div className="absolute flex flex-col inset-x-[0] items-center justify-start mx-auto top-[0%] w-[70%]">
                       <Img
                         className="h-[100px] mt-6"
                         src="images/img_iconuser.svg"

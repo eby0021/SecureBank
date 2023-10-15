@@ -68,6 +68,9 @@ const SignupPayIDCheckedPage30 = React.lazy(() =>
   import("pages/SignupPayIDCheckedPage30"),
 );
 const SignupPage30 = React.lazy(() => import("pages/SignupPage30"));
+const BPAY = React.lazy(() => import("pages/BPAY"));
+const Transfer = React.lazy(() => import("pages/Transfer"));
+
 const ProjectRoutes = () => {
   return (
     <React.Suspense fallback={<>Loading...</>}>
@@ -81,6 +84,8 @@ const ProjectRoutes = () => {
             element={<SignupPayIDCheckedPage30 />}
           />
           <Route path="/loginpage30" element={<LoginPage30 />} />
+          <Route path="/bpay" element={<BPAY />} />
+          <Route path="/transfer" element={<Transfer />} />
           <Route
             path="/loginpagerecaptcha30"
             element={<LoginPagereCaptcha30 />}

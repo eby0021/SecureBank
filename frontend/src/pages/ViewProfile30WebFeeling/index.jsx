@@ -1,8 +1,19 @@
 import React from "react";
-
+import { useNavigate  } from "react-router-dom";
 import { Button, Img, Line, List, Text } from "components";
 
 const ViewProfile30WebFeelingPage = () => {
+  const navigate = useNavigate();
+  const handleChatbotClick = () => {
+    navigate('/chatbotpage30webfeeling');
+  }
+  const handleBackButtonClick = () => {
+    navigate('/homepageeverydayaccount30webfeeling')
+  };
+  const handleLogoutClick = () => {
+    alert('user has been logged out')
+    navigate('/loginpage30')
+  }
   return (
     <>
       <div className="bg-white-A700 flex flex-col items-center justify-start mx-auto pb-[97px] w-full">
@@ -11,7 +22,7 @@ const ViewProfile30WebFeelingPage = () => {
             <div className="bg-light_blue-900 border border-black-900 border-solid flex flex-row h-full items-center justify-start m-auto p-[3px] shadow-bs w-full">
               <div className="flex sm:flex-col flex-row md:gap-10 items-start justify-between mb-[7px] ml-[46px] w-[99%]">
                 <Text
-                  className="md:text-5xl text-[64px] text-white-A700 underline"
+                  className="md:text-5xl text-[64px] text-white-A700"
                   size="txtPoppinsRegular64"
                 >
                   Secure Bank
@@ -24,18 +35,20 @@ const ViewProfile30WebFeelingPage = () => {
               </div>
             </div>
             <Text
-              className="absolute right-[17%] md:text-5xl text-[64px] text-white-A700 top-[0] underline"
+              className="absolute right-[17%] md:text-5xl text-[64px] text-white-A700 top-[0]" onClick={handleLogoutClick}
               size="txtPoppinsRegular64"
             >
               Logout
             </Text>
           </div>
           <div className="flex md:flex-col flex-row font-poppins md:gap-5 items-start justify-start max-w-[2890px] mt-[50px] mx-auto md:px-5 w-full">
-            <Img
-              className="h-[178px] md:mt-0 mt-[33px]"
+          <Img
+              className="h-[97px] md:mt-0 mt-[70px] ml-[25px]"
               src="images/img_iconbacksquare.svg"
               alt="iconbacksquare"
+              onClick={handleBackButtonClick}
             />
+{/*             
             <div className="bg-white-A700 flex md:flex-1 flex-col items-start justify-start md:ml-[0] ml-[842px] p-[9px] shadow-bs4 w-[23%] md:w-full">
               <div className="flex flex-col gap-[29px] justify-start mb-4 ml-1 md:ml-[0] w-[87%] md:w-full">
                 <div className="flex sm:flex-col flex-row gap-[45px] items-start justify-start w-full">
@@ -59,14 +72,19 @@ const ViewProfile30WebFeelingPage = () => {
                 </Text>
               </div>
             </div>
-            <div className="bg-white-A700 border-[5px] border-light_blue-900 border-solid flex mb-[25px] md:ml-[0] ml-[477px] md:mt-0 mt-[34px] p-[15px] relative rounded-[50px] shadow-bs3 w-[23%] md:w-full">
+ */}
+
+          <div className="bg-white-A700 border-[5px] border-light_blue-900 border-solid
+             flex md:ml-[0] ml-[250px] md:mt-0 mt-[27px] h-[200px] px-[60px] py-[40px] w-[25%] relative rounded-[50px] shadow-bs3 md:w-full ml-[400px]"
+          onClick={handleChatbotClick}
+             >
               <Img
-                className="h-[221px] my-auto object-cover w-[221px]"
+                className="mt-[5px] mr-[70px] h-[90px] w-[90px]"
                 src="images/img_ai28146662.png"
                 alt="ai28146662"
               />
               <Text
-                className="ml-[-58px] mr-[17px] mt-0.5 md:text-5xl text-[70px] text-black-900 text-center text-shadow-ts z-[1]"
+                className="ml-[-25px] mr-[17px] mt-0.5 md:text-5xl text-[30px] text-black-900 text-center text-shadow-ts z-[1]"
                 size="txtPoppinsBold70"
               >
                 <>
@@ -75,256 +93,293 @@ const ViewProfile30WebFeelingPage = () => {
                 </>
               </Text>
             </div>
+
+
+            
           </div>
           <Line className="bg-black-900_72 h-0.5 max-w-[2928px] mt-[67px] mx-auto w-full" />
-          <div className="flex md:flex-col flex-row font-jost md:gap-10 items-start justify-between max-w-[2529px] mt-[124px] mx-auto md:px-5 w-full">
-            <div className="bg-white-A700_01 border border-light_blue-800 border-solid flex flex-col items-center justify-start md:mt-0 mt-[9px] p-[15px] rounded-[30px] shadow-bs5">
+          <div className="flex md:flex-col flex-row font-jost md:gap-10 items-center justify-center mt-[84px] md:px-5 ">
+            <div className="bg-white-A700_01 border border-light_blue-800 border-solid flex flex-col items-center justify-start md:mt-0 mt-[0px] p-[15px] rounded-[30px] shadow-bs5">
               <div className="flex flex-col items-end justify-start mb-3 w-[88%] md:w-full">
                 <div className="flex md:flex-col flex-row md:gap-10 items-end justify-between w-[98%] md:w-full">
                   <div className="flex md:flex-col flex-row md:gap-10 items-start justify-between w-[62%] md:w-full">
                     <Text
-                      className="md:mt-0 mt-[152px] md:text-5xl text-[70px] text-black-900 underline"
+                      className="md:mt-0 mt-[152px] md:text-5xl text-[70px] text-black-900"
                       size="txtJostRomanBold70"
                     >
                       My Profile
+                   
                     </Text>
-                    <Img
-                      className="h-[314px] md:h-auto rounded-[50%] w-[314px]"
-                      src="images/img_ellipse20_314x314.png"
-                      alt="ellipseTwenty"
-                    />
+                  
                   </div>
-                  <div className="bg-white-A700 border-2 border-light_blue-900 border-solid flex sm:flex-col flex-row font-poppins sm:gap-[43px] items-start justify-between mb-1 md:mt-0 mt-[183px] p-2.5 rounded-tl-[10px] rounded-tr-[10px] w-[34%] md:w-full">
+                  {/* <div className="bg-white-A700 border-2 border-light_blue-900 border-solid flex sm:flex-col flex-row font-poppins sm:gap-[43px] items-start justify-between mb-1 md:mt-0 mt-[183px] p-2.5 rounded-tl-[10px] rounded-tr-[10px] w-[34%] md:w-full">
                     <Text
                       className="ml-2 sm:ml-[0] sm:mt-0 mt-4 sm:text-[31px] md:text-[33px] text-[35px] text-gray-700"
                       size="txtPoppinsBold35"
                     >
-                      Upload New Image
+                      Upload New Image budhi bidhian
                     </Text>
                     <Img
                       className="h-[101px] mb-[5px] mr-1"
                       src="images/img_icondocument.svg"
                       alt="icondocument"
                     />
-                  </div>
+                  </div> */}
                 </div>
-                <Line className="bg-light_blue-900 h-[5px] mr-[42px] w-[33%]" />
-                <div className="flex flex-col font-poppins items-start justify-start mt-[46px] w-full">
-                  <div className="bg-white-A700 border border-light_blue-900 border-solid flex md:flex-col flex-row md:gap-5 items-start justify-end px-4 rounded-tl-[10px] rounded-tr-[10px] w-full">
-                    <Text
-                      className="md:mt-0 mt-[35px] sm:text-[31px] md:text-[33px] text-[35px] text-black-900"
-                      size="txtPoppinsBold35Black900"
+                {/* <Line className="bg-light_blue-900 h-[5px] mr-[42px] w-[33%]" /> */}
+
+                {/* hi this is the profile wala complete container div */}
+                <div className="flex flex-col font-poppins items-center justify-center mt-[0px] w-[900px]">
+
+
+
+
+
+                  <div className="bg-white-A700 border ml-[120px] w-[850px] mt-[30px] border-light_blue-900 
+                  border-solid flex md:flex-col flex-row md:gap-5 items-center justify-start px-0 rounded-tl-[2px] rounded-tr-[2px] ">
+                   <label className=" sm:text-[31px] md:text-[33px] text-[30px] w-[20%] ml-[30px]" 
+                    size="txtJostRomanBold70"
                     >
-                      Name
-                    </Text>
-                    <Line className="bg-black-900_72 md:h-0.5 h-[123px] md:ml-[0] ml-[104px] w-0.5 md:w-full" />
-                    <Text
-                      className="md:ml-[0] ml-[60px] md:mt-0 mt-[41px] sm:text-[31px] md:text-[33px] text-[35px] text-black-900"
+                    Name
+                   </label>
+                    <input
+                      className="md:ml-[0] mb-[20px] md:mt-0 mt-[20px] sm:text-[31px] md:text-[33px] text-[25px] ml-[20px]
+                       text-black-900 border-none outline-none"
                       size="txtPoppinsSemiBold35"
-                    >
-                      Jack Sparrow
-                    </Text>
+                      type="text"
+                      placeholder="Jack Sparrow"
+                    />
                     <Img
-                      className="h-[107px] md:ml-[0] ml-[591px] md:mt-0 mt-[7px]"
+                      className="h-[74px] md:ml-[0] ml-[70px] md:mt-0 mt-[7px]"
                       src="images/img_iconmessage.svg"
                       alt="iconmessage"
                     />
                     <Img
-                      className="md:flex-1 h-[74px] sm:h-auto md:ml-[0] ml-[178px] md:mt-0 mt-[25px] object-cover rounded-[10px] w-[9%] md:w-full"
+                      className="md:flex-1 h-[74px] sm:h-auto md:ml-[0] mb-[20px] ml-[50px] md:mt-0 mt-[25px] object-cover rounded-[10px] w-[9%] md:w-full"
                       src="images/img_keyboard8419852.png"
                       alt="keyboard8419852"
                     />
                   </div>
-                  <div className="bg-white-A700 border border-light_blue-900 border-solid flex md:flex-col flex-row md:gap-5 items-center justify-end mt-10 px-4 rounded-tl-[10px] rounded-tr-[10px] w-full">
-                    <div className="h-[123px] relative w-[15%] md:w-full">
-                      <Line className="absolute bg-black-900_72 h-[123px] inset-y-[0] my-auto right-[6%] w-0.5" />
-                      <Text
-                        className="absolute inset-x-[0] mx-auto sm:text-[31px] md:text-[33px] text-[35px] text-black-900 top-[12%] w-full"
-                        size="txtPoppinsBold35Black900"
-                      >
-                        Mobile Number
-                      </Text>
-                    </div>
-                    <Text
-                      className="md:ml-[0] ml-[46px] sm:text-[31px] md:text-[33px] text-[35px] text-black-900"
-                      size="txtPoppinsSemiBold35"
+
+
+
+
+
+
+                  <div className="bg-white-A700 border ml-[120px] w-[850px] mt-[30px] border-light_blue-900 
+                  border-solid flex md:flex-col flex-row md:gap-5 items-center justify-start px-0 rounded-tl-[2px] rounded-tr-[2px] ">
+                   <label className=" sm:text-[31px] md:text-[33px] text-[30px] w-[20%] ml-[30px]" 
+                    size="txtJostRomanBold70"
                     >
-                      040000000
-                    </Text>
+                    Mobile Number
+                   </label>
+                    <input
+                      className="md:ml-[0] mb-[20px] md:mt-0 mt-[20px] sm:text-[31px] md:text-[33px] text-[25px] ml-[20px]
+                       text-black-900 border-none outline-none"
+                      size="txtPoppinsSemiBold35"
+                      type="text"
+                      placeholder="040000000"
+                    />
                     <Img
-                      className="h-[107px] md:ml-[0] ml-[631px]"
+                      className="h-[74px] md:ml-[0] ml-[70px] md:mt-0 mt-[7px]"
                       src="images/img_iconmessage.svg"
-                      alt="iconmessage_One"
+                      alt="iconmessage"
                     />
                     <Img
-                      className="md:flex-1 h-[74px] sm:h-auto md:ml-[0] ml-[178px] object-cover rounded-[10px] w-[9%] md:w-full"
+                      className="md:flex-1 h-[74px] sm:h-auto md:ml-[0] mb-[20px] ml-[50px] md:mt-0 mt-[25px] object-cover rounded-[10px] w-[9%] md:w-full"
                       src="images/img_keyboard8419852.png"
-                      alt="keyboard8419852_One"
+                      alt="keyboard8419852"
                     />
                   </div>
-                  <List
-                    className="flex flex-col gap-[22px] items-center mt-[72px] w-full"
-                    orientation="vertical"
-                  >
-                    <div className="bg-white-A700 border border-light_blue-900 border-solid flex flex-1 md:flex-col flex-row md:gap-5 items-start justify-end px-4 rounded-tl-[10px] rounded-tr-[10px] w-full">
-                      <Text
-                        className="md:mt-0 mt-7 sm:text-[31px] md:text-[33px] text-[35px] text-black-900"
-                        size="txtPoppinsBold35Black900"
-                      >
-                        Email
-                      </Text>
-                      <Line className="bg-black-900_72 md:h-0.5 h-[122px] md:ml-[0] ml-[113px] w-0.5 md:w-full" />
-                      <Text
-                        className="md:ml-[0] ml-[58px] md:mt-0 mt-[29px] sm:text-[31px] md:text-[33px] text-[35px] text-black-900"
-                        size="txtPoppinsSemiBold35"
-                      >
-                        j.sparrow@gmail.com
-                      </Text>
-                      <Img
-                        className="h-[107px] md:ml-[0] ml-[441px] md:mt-0 mt-1.5"
-                        src="images/img_iconmessage.svg"
-                        alt="iconmessage"
-                      />
-                      <Img
-                        className="md:flex-1 h-[74px] sm:h-auto md:ml-[0] ml-[178px] md:mt-0 mt-[29px] object-cover rounded-[10px] w-[9%] md:w-full"
-                        src="images/img_keyboard8419852.png"
-                        alt="keyboard8419852"
-                      />
-                    </div>
-                    <Line className="self-center h-[5px] bg-light_blue-900 w-full" />
-                    <div className="bg-white-A700 border border-light_blue-900 border-solid flex flex-1 md:flex-col flex-row md:gap-5 items-center justify-start px-[18px] rounded-tl-[10px] rounded-tr-[10px] w-full">
-                      <Text
-                        className="sm:text-[31px] md:text-[33px] text-[35px] text-black-900"
-                        size="txtPoppinsBold35Black900"
-                      >
-                        Birth Day
-                      </Text>
-                      <Line className="bg-black-900_72 md:h-0.5 h-[122px] md:ml-[0] ml-[65px] w-0.5 md:w-full" />
-                      <Text
-                        className="ml-16 md:ml-[0] sm:text-[31px] md:text-[33px] text-[35px] text-black-900"
-                        size="txtPoppinsSemiBold35"
-                      >
-                        23 March 1940
-                      </Text>
-                      <Img
-                        className="h-[107px] md:ml-[0] ml-[584px]"
-                        src="images/img_iconmessage.svg"
-                        alt="iconmessage"
-                      />
-                      <Img
-                        className="md:flex-1 h-[74px] sm:h-auto md:ml-[0] ml-[175px] object-cover rounded-[10px] w-[9%] md:w-full"
-                        src="images/img_keyboard8419852.png"
-                        alt="keyboard8419852"
-                      />
-                    </div>
-                    <Line className="self-center h-[5px] bg-light_blue-900 w-full" />
-                    <div className="bg-white-A700 border border-light_blue-900 border-solid flex flex-1 md:flex-col flex-row md:gap-5 items-center justify-end px-[19px] rounded-tl-[10px] rounded-tr-[10px] w-full">
-                      <Text
-                        className="sm:text-[31px] md:text-[33px] text-[35px] text-black-900"
-                        size="txtPoppinsBold35Black900"
-                      >
-                        Acc No
-                      </Text>
-                      <Line className="bg-black-900_72 md:h-0.5 h-[122px] md:ml-[0] ml-[84px] w-0.5 md:w-full" />
-                      <Text
-                        className="ml-16 md:ml-[0] sm:text-[31px] md:text-[33px] text-[35px] text-black-900"
-                        size="txtPoppinsSemiBold35"
-                      >
-                        5111322021
-                      </Text>
-                      <Img
-                        className="h-[107px] md:ml-[0] ml-[659px]"
-                        src="images/img_iconmessage.svg"
-                        alt="iconmessage"
-                      />
-                      <Img
-                        className="md:flex-1 h-[74px] sm:h-auto md:ml-[0] ml-[175px] object-cover rounded-[10px] w-[9%] md:w-full"
-                        src="images/img_keyboard8419852.png"
-                        alt="keyboard8419852"
-                      />
-                    </div>
-                  </List>
-                  <div className="h-[122px] sm:h-[177px] md:h-[590px] md:ml-[0] ml-[3px] mt-[55px] relative w-full">
+
+
+
+
+
+                  <div className="bg-white-A700 border ml-[120px] w-[850px] mt-[30px] border-light_blue-900 
+                  border-solid flex md:flex-col flex-row md:gap-5 items-center justify-start px-0 rounded-tl-[2px] rounded-tr-[2px] ">
+                   <label className=" sm:text-[31px] md:text-[33px] text-[30px] w-[20%] ml-[30px]" 
+                    size="txtJostRomanBold70"
+                    >
+                    Email
+                   </label>
+                    <input
+                      className="md:ml-[0] mb-[20px] md:mt-0 mt-[20px] sm:text-[31px] md:text-[33px] text-[25px] ml-[20px]
+                       text-black-900 border-none outline-none"
+                      size="txtPoppinsSemiBold35"
+                      type="text"
+                      placeholder="jackspaow@gmail.com"
+                    />
                     <Img
-                      className="h-[83px] ml-auto my-auto object-cover rounded-[10px] w-[16%]"
-                      src="images/img_keyboard8419852.png"
-                      alt="keyboard8419852_Two"
+                      className="h-[74px] md:ml-[0] ml-[70px] md:mt-0 mt-[7px]"
+                      src="images/img_iconmessage.svg"
+                      alt="iconmessage"
                     />
-                    <div className="absolute bg-white-A700 border border-light_blue-900 border-solid flex md:flex-col flex-row md:gap-5 h-full inset-[0] items-start justify-center m-auto px-[19px] rounded-tl-[10px] rounded-tr-[10px] w-full">
-                      <Text
-                        className="sm:flex-1 md:mt-0 mt-[13px] text-3xl sm:text-[26px] md:text-[28px] text-black-900 w-[14%] sm:w-full"
-                        size="txtPoppinsBold30"
-                      >
-                        Change Password
-                      </Text>
-                      <Line className="bg-black-900_72 md:h-0.5 h-[122px] ml-2.5 md:ml-[0] w-0.5 md:w-full" />
-                      <Text
-                        className="ml-16 md:ml-[0] md:mt-0 mt-[22px] md:text-5xl text-6xl text-black-900"
-                        size="txtPoppinsSemiBold60Black900"
-                      >
-                        .......................
-                      </Text>
-                      <Img
-                        className="h-[107px] md:ml-[0] ml-[476px] md:mt-0 mt-1.5"
-                        src="images/img_iconmessage.svg"
-                        alt="iconmessage_Two"
-                      />
-                      <Img
-                        className="md:flex-1 h-[74px] sm:h-auto md:ml-[0] ml-[175px] md:mt-0 mt-[26px] object-cover rounded-[10px] w-[9%] md:w-full"
-                        src="images/img_keyboard8419852.png"
-                        alt="keyboard8419852_Three"
-                      />
-                    </div>
+                    <Img
+                      className="md:flex-1 h-[74px] sm:h-auto md:ml-[0] mb-[20px] ml-[50px] md:mt-0 mt-[25px] object-cover rounded-[10px] w-[9%] md:w-full"
+                      src="images/img_keyboard8419852.png"
+                      alt="keyboard8419852"
+                    />
                   </div>
-                  <div className="flex md:flex-col flex-row md:gap-10 items-center justify-between md:ml-[0] ml-[3px] mt-[58px] w-full">
-                    <div className="bg-white-A700 border border-light_blue-900 border-solid flex md:flex-1 sm:flex-col flex-row sm:gap-5 items-start justify-start md:px-10 sm:px-5 px-[41px] rounded-tl-[10px] rounded-tr-[10px] w-[38%] md:w-full">
-                      <Text
-                        className="sm:mt-0 mt-[34px] sm:text-[31px] md:text-[33px] text-[35px] text-black-900"
-                        size="txtPoppinsBold35Black900"
-                      >
-                        PayID
-                      </Text>
-                      <Line className="bg-black-900_72 sm:h-0.5 h-[122px] sm:ml-[0] ml-[71px] w-0.5 sm:w-full" />
-                      <Text
-                        className="sm:ml-[0] ml-[98px] sm:mt-0 mt-[25px] sm:text-[31px] md:text-[33px] text-[35px] text-black-900"
-                        size="txtPoppinsSemiBold35"
-                      >
-                        04000000
-                      </Text>
-                    </div>
-                    <div className="bg-white-A700 border border-light_blue-900 border-solid flex md:flex-1 md:flex-col flex-row md:gap-5 items-center justify-end px-[19px] rounded-tl-[10px] rounded-tr-[10px] w-[57%] md:w-full">
-                      <Text
-                        className="sm:text-[31px] md:text-[33px] text-[35px] text-black-900"
-                        size="txtPoppinsBold35Black900"
-                      >
-                        LoginID
-                      </Text>
-                      <Line className="bg-black-900_72 md:h-0.5 h-[122px] md:ml-[0] ml-[42px] w-0.5 md:w-full" />
-                      <Text
-                        className="md:ml-[0] ml-[62px] sm:text-[31px] md:text-[33px] text-[35px] text-black-900"
-                        size="txtPoppinsSemiBold35"
-                      >
-                        JS76S
-                      </Text>
-                      <Img
-                        className="h-[107px] md:ml-[0] ml-[81px]"
-                        src="images/img_iconmessage.svg"
-                        alt="iconmessage_Three"
-                      />
-                      <Img
-                        className="h-[74px] sm:h-auto md:ml-[0] ml-[175px] object-cover rounded-[10px] w-[16%] md:w-full"
-                        src="images/img_keyboard8419852.png"
-                        alt="keyboard8419852_Four"
-                      />
-                    </div>
+
+
+
+
+
+                  <div className="bg-white-A700 border ml-[120px] w-[850px] mt-[30px] border-light_blue-900 
+                  border-solid flex md:flex-col flex-row md:gap-5 items-center justify-start px-0 rounded-tl-[2px] rounded-tr-[2px] ">
+                   <label className=" sm:text-[31px] md:text-[33px] text-[30px] w-[20%] ml-[30px]" 
+                    size="txtJostRomanBold70"
+                    >
+                    Birth Day
+                   </label>
+                    <input
+                      className="md:ml-[0] mb-[20px] md:mt-0 mt-[20px] sm:text-[31px] md:text-[33px] text-[25px] ml-[20px]
+                       text-black-900 border-none outline-none"
+                      size="txtPoppinsSemiBold35"
+                      type="text"
+                      placeholder="1 January 1925"
+                    />
+                    <Img
+                      className="h-[74px] md:ml-[0] ml-[70px] md:mt-0 mt-[7px]"
+                      src="images/img_iconmessage.svg"
+                      alt="iconmessage"
+                    />
+                    <Img
+                      className="md:flex-1 h-[74px] sm:h-auto md:ml-[0] mb-[20px] ml-[50px] md:mt-0 mt-[25px] object-cover rounded-[10px] w-[9%] md:w-full"
+                      src="images/img_keyboard8419852.png"
+                      alt="keyboard8419852"
+                    />
                   </div>
-                  <div className="flex sm:flex-col flex-row md:gap-10 items-center justify-between md:ml-[0] ml-[3px] mt-1 w-full">
-                    <Line className="bg-light_blue-900 h-[5px] w-[38%]" />
-                    <Line className="bg-light_blue-900 h-[5px] w-[57%]" />
+
+
+
+               
+
+
+                  <div className="bg-white-A700 border ml-[120px] w-[850px] mt-[30px] border-light_blue-900 
+                  border-solid flex md:flex-col flex-row md:gap-5 items-center justify-start px-0 rounded-tl-[2px] rounded-tr-[2px] ">
+                   <label className=" sm:text-[31px] md:text-[33px] text-[30px] w-[20%] ml-[30px]" 
+                    size="txtJostRomanBold70"
+                    >
+                    Acc Number
+                   </label>
+                    <input
+                      className="md:ml-[0] mb-[20px] md:mt-0 mt-[20px] sm:text-[31px] md:text-[33px] text-[25px] ml-[20px]
+                       text-black-900 border-none outline-none"
+                      size="txtPoppinsSemiBold35"
+                      type="text"
+                      placeholder="51169857"
+                    />
+                    <Img
+                      className="h-[74px] md:ml-[0] ml-[70px] md:mt-0 mt-[7px]"
+                      src="images/img_iconmessage.svg"
+                      alt="iconmessage"
+                    />
+                    <Img
+                      className="md:flex-1 h-[74px] sm:h-auto md:ml-[0] mb-[20px] ml-[50px] md:mt-0 mt-[25px] object-cover rounded-[10px] w-[9%] md:w-full"
+                      src="images/img_keyboard8419852.png"
+                      alt="keyboard8419852"
+                    />
                   </div>
+
+
+                  <div className="bg-white-A700 border ml-[120px] w-[850px] mt-[30px] border-light_blue-900 
+                  border-solid flex md:flex-col flex-row md:gap-5 items-center justify-start px-0 rounded-tl-[2px] rounded-tr-[2px] ">
+                   <label className=" sm:text-[31px] md:text-[33px] text-[30px] w-[20%] ml-[30px]" 
+                    size="txtJostRomanBold70"
+                    >
+                     Password
+                   </label>
+                    <input
+                      className="md:ml-[0] mb-[20px] md:mt-0 mt-[20px] sm:text-[31px] md:text-[33px] text-[25px] ml-[20px]
+                       text-black-900 border-none outline-none"
+                      size="txtPoppinsSemiBold35"
+                      type="password"
+                      placeholder="*************"
+                    />
+                    <Img
+                      className="h-[74px] md:ml-[0] ml-[70px] md:mt-0 mt-[7px]"
+                      src="images/img_iconmessage.svg"
+                      alt="iconmessage"
+                    />
+                    <Img
+                      className="md:flex-1 h-[74px] sm:h-auto md:ml-[0] mb-[20px] ml-[50px] md:mt-0 mt-[25px] object-cover rounded-[10px] w-[9%] md:w-full"
+                      src="images/img_keyboard8419852.png"
+                      alt="keyboard8419852"
+                    />
+                  </div>
+
+
+
+
+
+                  <div className="bg-white-A700 border ml-[120px] w-[850px] mt-[30px] border-light_blue-900 
+                  border-solid flex md:flex-col flex-row md:gap-5 items-center justify-start px-0 rounded-tl-[2px] rounded-tr-[2px] ">
+                   <label className=" sm:text-[31px] md:text-[33px] text-[30px] w-[20%] ml-[30px]" 
+                    size="txtJostRomanBold70"
+                    >
+                     Address
+                   </label>
+                    <input
+                      className="md:ml-[0] mb-[20px] md:mt-0 mt-[20px] sm:text-[31px] md:text-[33px] text-[25px] ml-[20px]
+                       text-black-900 border-none outline-none"
+                      size="txtPoppinsSemiBold35"
+                      type="text"
+                      placeholder="221 B Bakers Street"
+                    />
+                    <Img
+                      className="h-[74px] md:ml-[0] ml-[70px] md:mt-0 mt-[7px]"
+                      src="images/img_iconmessage.svg"
+                      alt="iconmessage"
+                    />
+                    <Img
+                      className="md:flex-1 h-[74px] sm:h-auto md:ml-[0] mb-[20px] ml-[50px] md:mt-0 mt-[25px] object-cover rounded-[10px] w-[9%] md:w-full"
+                      src="images/img_keyboard8419852.png"
+                      alt="keyboard8419852"
+                    />
+                  </div>
+               
+                
+
+
+
+                  <div className="bg-white-A700 border ml-[120px] w-[850px] mt-[30px] border-light_blue-900 
+                  border-solid flex md:flex-col flex-row md:gap-5 items-center justify-start px-0 rounded-tl-[2px] rounded-tr-[2px] ">
+                   <label className=" sm:text-[31px] md:text-[33px] text-[30px] w-[20%] ml-[30px]" 
+                    size="txtJostRomanBold70"
+                    >
+                    Pay ID
+                   </label>
+                    <input
+                      className="md:ml-[0] mb-[20px] md:mt-0 mt-[20px] sm:text-[31px] md:text-[33px] text-[25px] ml-[20px]
+                       text-black-900 border-none outline-none"
+                      size="txtPoppinsSemiBold35"
+                      type="password"
+                      placeholder="2357344"
+                    />
+                    <Img
+                      className="h-[74px] md:ml-[0] ml-[70px] md:mt-0 mt-[7px]"
+                      src="images/img_iconmessage.svg"
+                      alt="iconmessage"
+                    />
+                    <Img
+                      className="md:flex-1 h-[74px] sm:h-auto md:ml-[0] mb-[20px] ml-[50px] md:mt-0 mt-[25px] object-cover rounded-[10px] w-[9%] md:w-full"
+                      src="images/img_keyboard8419852.png"
+                      alt="keyboard8419852"
+                    />
+                  </div>
+
+
+                  
+                
                   <Button
-                    className="cursor-pointer font-semibold leading-[normal] min-w-[578px] sm:min-w-full md:ml-[0] ml-[549px] mt-[37px] rounded-[50px] sm:text-[35px] md:text-[41px] text-[45px] text-center"
+                    className="cursor-pointer font-semibold leading-[normal] min-w-[478px] sm:min-w-full md:ml-[0] ml-[150px] mt-[37px] rounded-[50px] sm:text-[35px] md:text-[41px] text-[45px] text-center"
                     size="lg"
+                    onClick={()=> {
+                      alert('Saving profile API will take data to backend')
+                      navigate('/homepageeverydayaccount30webfeeling')
+                    }}
                   >
                     Save Profile
                   </Button>

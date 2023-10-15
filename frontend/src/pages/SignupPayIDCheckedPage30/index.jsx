@@ -7,6 +7,7 @@ const SignupPayIDCheckedPage30Page = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [middleName, setMiddleName] = useState("");
+  // const [fatherName, setFatherName] = useState("");
   const [dateOfBirth, setDateOfBirth] = useState("");
   const [mobileNumber, setMobileNumber] = useState("");
   const [residentialAddress, setResidentialAddress] = useState("");
@@ -51,39 +52,40 @@ const SignupPayIDCheckedPage30Page = () => {
       alert("Fill in all the required fields");
       return;
     }
+    navigate("/homepageeverydayaccount30webfeeling");
   
     // Save the combined user data to localStorage
-    localStorage.setItem("userDataPage2", JSON.stringify(userDataPage2));
-    const response = await fetch("http://localhost:3001/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: storedUserData.email,
-        password: storedUserData.password,
-        firstName,
-        lastName,
-        middleName,
-        dateOfBirth,
-        mobileNumber,
-        residentialAddress,
-      }),
-    }).then((response) => {
-        if (response.status===201) {
-          // Handle success (e.g., redirect to a success page)
-          console.log("Data submitted successfully");
-          alert("User registered successfully");
-          navigate("/homepageeverydayaccount30webfeeling"); // Redirect to a success page
-        } else {
-          // Handle error (e.g., show an error message)
-          console.error("Error submitting data");
-        }
-      })
-      .catch((error) => {
-        // Handle network or other errors
-        console.error("Error:", error);
-      });
+    // localStorage.setItem("userDataPage2", JSON.stringify(userDataPage2));
+    // const response = await fetch("http://localhost:3001/register", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     email: storedUserData.email,
+    //     password: storedUserData.password,
+    //     firstName,
+    //     lastName,
+    //     middleName,
+    //     dateOfBirth,
+    //     mobileNumber,
+    //     residentialAddress,
+    //   }),
+    // }).then((response) => {
+    //     if (response.status===201) {
+    //       // Handle success (e.g., redirect to a success page)
+    //       console.log("Data submitted successfully");
+    //       alert("User registered successfully");
+    //       navigate("/homepageeverydayaccount30webfeeling"); // Redirect to a success page
+    //     } else {
+    //       // Handle error (e.g., show an error message)
+    //       console.error("Error submitting data");
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     // Handle network or other errors
+    //     console.error("Error:", error);
+    //   });
   };
   return (
     <>
@@ -152,8 +154,8 @@ const SignupPayIDCheckedPage30Page = () => {
                 />
               </div>
               <Line className="bg-light_blue-900 h-[5px] mt-1 w-full" />
-              <div className="bg-white-A700 border border-light_blue-900 border-solid flex flex-row sm:gap-10 items-end justify-between mt-[42px] pl-[5px] py-[5px] rounded-tl-[10px] rounded-tr-[10px] w-full">
-              
+
+              <div className="bg-white-A700 border border-light_blue-900 border-solid flex flex-row sm:gap-10 items-end justify-between mt-[42px] pl-[5px] py-[5px] rounded-tl-[10px] rounded-tr-[10px] w-full">              
              <input
                className="ml-[21px] sm:text-[31px] md:text-[33px] text-[35px] text-gray-700 outline-none border-none bg-transparent"
                type="text"
@@ -168,11 +170,36 @@ const SignupPayIDCheckedPage30Page = () => {
                 />
               </div>
               <Line className="bg-light_blue-900 h-[5px] mt-1 w-full" />
+
+              
+
+
+              
+              {/* <div className="bg-white-A700 border border-light_blue-900 border-solid flex flex-row sm:gap-10 items-end justify-between mt-[42px] pl-[5px] py-[5px] rounded-tl-[10px] rounded-tr-[10px] w-full">              
+             <input
+               className="ml-[21px] sm:text-[31px] md:text-[33px] text-[35px] text-gray-700 outline-none border-none bg-transparent"
+               type="text"
+               placeholder="Father's Name"
+               value={fatherName}
+               onChange={(e) => setFatherName(e.target.value)}
+              />
+                <Img
+                  className="h-[74px] md:h-auto mt-1.5 object-cover rounded-[10px]"
+                  src="images/img_keyboard8419852.png"
+                  alt="keyboard8419852_Two"
+                />
+              </div>
+              <Line className="bg-light_blue-900 h-[5px] mt-1 w-full" /> */}
+
+
+
+
+
               <div className="bg-white-A700 border border-light_blue-900 border-solid flex flex-row sm:gap-10 items-center justify-between mt-[46px] pl-1.5 py-1.5 rounded-tl-[10px] rounded-tr-[10px] w-full">
               <input
                 className="ml-3.5 sm:text-[31px] md:text-[33px] text-[35px] text-gray-700 outline-none border-none bg-transparent"
                 type="text"
-               placeholder="Date of Birth"
+               placeholder="YYYY-MM-DD"
                 value={dateOfBirth}
                 onChange={(e) => setDateOfBirth(e.target.value)}
                 />

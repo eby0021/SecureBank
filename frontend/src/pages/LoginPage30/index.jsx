@@ -10,7 +10,7 @@ const LoginPage30Page = () => {
     navigate("/SignupPage30")
   };
  
-  const handleLoginLogic = async () => {
+  const handleLoginLogic =  () => {
     try {
       if(
         !email ||
@@ -19,31 +19,40 @@ const LoginPage30Page = () => {
         alert("Fill in all the required fields");
         return;
       }
-      const response = await fetch("http://localhost:3001/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          password
-        }),
-      });
-
-      if (response.status === 200) {
-        // Handle successful login (e.g., redirect to a dashboard)
-        alert("Login successful");
+      else{
+        alert("data will be sent to backend through API")
         navigate("/homepageeverydayaccount30webfeeling");
-      } else {
-        // Handle login failure (e.g., show an error message)
-        alert("Login failed");
-        console.error("Login failed");
+
       }
-    } catch (error) {
-      // Handle network or other errors
-      console.error("Error:", error);
-    }
-  };
+    //   const response = await fetch("http://localhost:3001/login", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //       email,
+    //       password
+    //     }),
+    //   });
+
+    //   if (response.status === 200) {
+    //     // Handle successful login (e.g., redirect to a dashboard)
+    //     alert("Login successful");
+    //     navigate("/homepageeverydayaccount30webfeeling");
+    //   } else {
+    //     // Handle login failure (e.g., show an error message)
+    //     alert("Login failed");
+    //     console.error("Login failed");
+    //   }
+    // } catch (error) {
+    //   // Handle network or other errors
+    //   console.error("Error:", error);
+     }
+     catch (error) {
+        console.error("Error:", error);
+     }
+
+  }
 
   return (
     <>

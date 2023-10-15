@@ -6,7 +6,7 @@ import { useNavigate  } from "react-router-dom";
 const SignupPage30Page = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [profilePicture, setProfilePicture] = useState(null);
+  // const [profilePicture, setProfilePicture] = useState(null);
   const navigate = useNavigate ();
   const handleLoginClick = () => {
     navigate("/LoginPage30")
@@ -136,7 +136,7 @@ const SignupPage30Page = () => {
               />
             </div>
             <Line className="bg-light_blue-900 h-[5px] md:ml-[0] ml-[0px] mt-[0px] w-[125%]" />
-            <div className="bg-white-A700 border border-light_blue-900 border-solid flex sm:flex-col flex-row gap-[15px] items-center justify-start md:ml-[0] ml-[0px] mt-[91px] p-[7px] rounded-tl-[10px] rounded-tr-[10px] w-[125%] md:w-full">
+            {/* <div className="bg-white-A700 border border-light_blue-900 border-solid flex sm:flex-col flex-row gap-[15px] items-center justify-start md:ml-[0] ml-[0px] mt-[91px] p-[7px] rounded-tl-[10px] rounded-tr-[10px] w-[125%] md:w-full">
             <input
             type="file"
             className="ml-4 sm:ml-[0] sm:text-[31px] md:text-[33px] text-[35px] text-gray-700"
@@ -150,7 +150,7 @@ const SignupPage30Page = () => {
                 alt="checkmark"
               />
             </div>
-            <Line className="bg-light_blue-900 h-[5px] md:ml-[0] ml-[0px] mt-[0px] w-[125%]" />
+            <Line className="bg-light_blue-900 h-[5px] md:ml-[0] ml-[0px] mt-[0px] w-[125%]" /> */}
           {/* <form onSubmit={handleSubmit}> */}
           <button
            type="submit"

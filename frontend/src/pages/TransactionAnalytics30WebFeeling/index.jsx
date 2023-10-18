@@ -1,8 +1,20 @@
 import React from "react";
+import { useNavigate  } from "react-router-dom";
 
 import { Img, Line, Text } from "components";
 
 const TransactionAnalytics30WebFeelingPage = () => {
+  const navigate = useNavigate ();
+  const handleBackButtonClick = () => {
+    navigate('/homepageeverydayaccount30webfeeling')
+  };
+  const handleChatbotClick = () => {
+    navigate('/chatbotpage30webfeeling');
+  }
+  const handleLogoutClick = () => {
+    alert('user has been logged out')
+    navigate('/loginpage30')
+  }
   return (
     <>
       <div className="bg-white-A700 flex flex-col items-center justify-start mx-auto pb-[82px] w-full">
@@ -18,32 +30,38 @@ const TransactionAnalytics30WebFeelingPage = () => {
               </div>
             </div>
             <Text
-              className="absolute h-max inset-y-[0] left-[2%] my-auto md:text-5xl text-[64px] text-white-A700 underline"
+              className="absolute h-max inset-y-[0] left-[2%] my-auto md:text-5xl text-[64px] text-white-A700 "
               size="txtPoppinsRegular64"
             >
               Secure Bank
             </Text>
             <Text
-              className="absolute right-[13%] md:text-5xl text-[64px] text-white-A700 top-[0] underline"
+              className="absolute right-[13%] md:text-5xl text-[64px] text-white-A700 top-[0] "
               size="txtPoppinsRegular64"
+              onClick={handleLogoutClick}
             >
               Logout
             </Text>
           </div>
-          <div className="flex md:flex-col flex-row font-poppins md:gap-5 items-start justify-start max-w-[2278px] mt-2 mx-auto md:px-5 w-full">
+
+
+          <div className="flex md:flex-col flex-row font-poppins md:gap-5 items-start justify-start max-w-[2380px] mt-2 mx-auto md:px-5 w-full">
             <Img
-              className="h-[151px] md:mt-0 mt-[62px]"
+              className="h-[97px] md:mt-0 mt-[70px] ml-[25px]"
               src="images/img_iconbacksquare.svg"
               alt="iconbacksquare"
+              onClick={handleBackButtonClick}
             />
-            <div className="bg-white-A700 border-[5px] border-light_blue-900 border-solid flex mb-[60px] md:ml-[0] ml-[584px] md:mt-0 mt-[27px] p-[15px] relative rounded-[50px] shadow-bs3 w-[30%] md:w-full">
+            <div className="bg-white-A700 border-[5px] border-light_blue-900 border-solid
+             flex md:ml-[0] ml-[250px] md:mt-0 mt-[27px] h-[200px] px-[60px] py-[40px] w-[25%] relative rounded-[50px] shadow-bs3 md:w-full ml-[400px]"
+             onClick={handleChatbotClick}>
               <Img
-                className="h-[188px] mt-0.5 object-cover w-[188px]"
+                className="mt-[5px] mr-[70px] h-[90px] w-[90px]"
                 src="images/img_ai28146662.png"
                 alt="ai28146662"
               />
               <Text
-                className="ml-[-25px] mr-[17px] mt-0.5 md:text-5xl text-[70px] text-black-900 text-center text-shadow-ts z-[1]"
+                className="ml-[-25px] mr-[17px] mt-0.5 md:text-5xl text-[30px] text-black-900 text-center text-shadow-ts z-[1]"
                 size="txtPoppinsBold70"
               >
                 <>
@@ -52,11 +70,11 @@ const TransactionAnalytics30WebFeelingPage = () => {
                 </>
               </Text>
             </div>
-            <Img
-              className="h-[353px] md:h-auto md:ml-[0] ml-[490px] rounded-[50%] w-[353px]"
-              src="images/img_ellipse20.png"
+            {/* <Img
+              className="md:flex-1 h-[130px] sm:h-auto mb-3 md:ml-[0] ml-[400px] object-cover rounded-[161px] w-[17%] md:w-full mt-[35px] mr-[30px]"
+              src="images/img_ellipse20_281x322.png"
               alt="ellipseTwenty"
-            />
+            /> */}
           </div>
           <Line className="bg-black-900_72 h-0.5 mt-[25px] w-full" />
           <div className="flex md:flex-col flex-row font-poppins md:gap-10 items-start justify-between max-w-[1837px] mt-[124px] mx-auto md:px-5 w-full">

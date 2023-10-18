@@ -64,6 +64,10 @@ const PaySomeoneByBankErrorField30WebFeelingPage = () => {
     <>
       <div className="bg-white-A700 flex flex-col items-center justify-start  pb-[52px] w-full">
         <div className="flex flex-col justify-start w-full">
+
+
+
+
           <div className="font-poppins md:h-24 h-[99px] md:px-5 relative w-full">
             <div className="absolute bg-light_blue-900 border border-black-900 border-solid h-[95px] inset-x-[0] mx-auto shadow-bs top-[0] w-full"></div>
             <Text
@@ -85,6 +89,10 @@ const PaySomeoneByBankErrorField30WebFeelingPage = () => {
               alt="iconsearch"
             />
           </div>
+
+
+
+
           <div className="flex md:flex-col flex-row font-poppins md:gap-5 items-start justify-start max-w-[2380px] mt-2 mx-auto md:px-5 w-full">
             <Img
               className="h-[97px] md:mt-0 mt-[70px] ml-[25px]"
@@ -110,11 +118,10 @@ const PaySomeoneByBankErrorField30WebFeelingPage = () => {
                 </>
               </Text>
             </div>
-            {/* <Img
-              className="md:flex-1 h-[130px] sm:h-auto mb-3 md:ml-[0] ml-[400px] object-cover rounded-[161px] w-[17%] md:w-full mt-[35px] mr-[30px]"
-              src="images/img_ellipse20_281x322.png"
-              alt="ellipseTwenty"
-            /> */}
+
+
+
+            
           </div>
           <div className="flex md:flex-col flex-row font-poppins md:gap-5 items-start justify-start max-w-[2456px] mt-3.5 mx-auto md:px-5 w-full">
             <div className="flex flex-1 flex-col items-start justify-start w-full">

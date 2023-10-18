@@ -1,4 +1,4 @@
-import React from "react";
+import {React, useState} from "react";
 import { useNavigate  } from "react-router-dom";
 import { Button, Img, Line, List, Text } from "components";
 
@@ -13,7 +13,9 @@ const ViewProfile30WebFeelingPage = () => {
   const handleLogoutClick = () => {
     alert('user has been logged out')
     navigate('/loginpage30')
+  
   }
+  const [password, setPassword] = useState('');
   return (
     <>
       <div className="bg-white-A700 flex flex-col items-center justify-start mx-auto pb-[97px] w-full">
@@ -297,6 +299,8 @@ const ViewProfile30WebFeelingPage = () => {
                       size="txtPoppinsSemiBold35"
                       type="password"
                       placeholder="*************"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
                     />
                     <Img
                       className="h-[74px] md:ml-[0] ml-[70px] md:mt-0 mt-[7px]"

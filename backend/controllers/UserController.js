@@ -75,7 +75,6 @@ class UserController {
         const token = generateToken(user.userId);
         console.log("token generated: ", token)
         res.set('Authorization', `Bearer ${token}`);
-      
         res.status(200).json({ message: 'User logged in successfully', token });
       } else {
         res.status(401).json({ message: 'Invalid email or password' });

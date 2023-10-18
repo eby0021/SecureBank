@@ -59,16 +59,18 @@ const TransactionAnalytics30WebFeelingOnePage = () => {
             />
           </div>
           <Line className="bg-black-900_72 h-0.5 mt-[25px] w-full" />
-          <div className="flex md:flex-col flex-row font-poppins md:gap-10 items-start justify-between max-w-[1837px] mt-[124px] mx-auto md:px-5 w-full">
-            <div className="bg-white-A700 border-[3px] border-gray-600 border-solid flex flex-col items-center justify-start p-[19px] rounded-[50px] shadow-bs11">
+          <div className="flex md:flex-col flex-row font-poppins md:gap-10 items-center justify-center max-w-[1837px]
+           mt-[124px]  md:px-5 w-[1200px] ml-[100px]">
+            <div className="bg-white-A700 border-[3px] border-gray-600 border-solid flex flex-col 
+            items-center justify-start p-[19px] rounded-[50px] shadow-bs11">
               <div className="flex flex-col justify-start mb-[126px] w-[82%] md:w-full">
                 <Img
-                  className="h-[155px] md:ml-[0] ml-[412px]"
+                  className="h-[155px] md:ml-[0] ml-[0px]"
                   src="images/img_iconchart3.svg"
                   alt="iconchartThree"
                 />
                 <Text
-                  className="md:ml-[0] ml-[178px] mt-[25px] md:text-5xl text-6xl text-black-900 text-center"
+                  className="md:ml-[0] ml-[0px] mt-[25px] md:text-5xl text-6xl text-black-900 text-center"
                   size="txtPoppinsSemiBold60Black900"
                 >
                   Transaction Analytics

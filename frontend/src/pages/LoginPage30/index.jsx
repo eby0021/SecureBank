@@ -1,29 +1,66 @@
 import React, { useState } from "react";
-
 import { Button, Img, Line, Text } from "components";
-import { useNavigate  } from "react-router-dom";
+import { useHistory} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 const LoginPage30Page = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate ();
+  // const history = useHistory();
   const handleSignupLogic = () => {
-    navigate("/SignupPage30")
+    navigate("/signuppage30")
   };
  
-  const handleLoginLogic =  () => {
+  const handleLoginLogic = async () => {
     try {
-      if(
-        !email ||
-        !password
-      ) {
-        alert("Fill in all the required fields");
+      if (!email || !password) {
+        alert('Fill in all the required fields');
         return;
-      }
-      else{
-        alert("data will be sent to backend through API")
-        navigate("/homepageeverydayaccount30webfeeling");
+      } else {
+        // Prepare the request body
+        const requestBody = {
+          email: email,
+          password: password,
+        };
 
+        // Send the POST request to the backend
+        const response = await fetch('http://localhost:8080//sys/user/loginCheck', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(requestBody),
+        });
+
+        if (response.ok) {
+          const responseData = await response.json();
+          console.log("responseData",responseData)
+          if (responseData > 0) {
+            // User logged in successfully, and responseData contains userID
+            const userID= responseData;
+            console.log('userID:', userID);
+            console.log('URL:', `/homepageeverydayaccount30webfeeling?userID=${userID}`);
+            alert('Login successful');
+            
+
+            // Now you can append the userID to request parameters or perform other actions
+            // history.push(`/homepageeverydayaccount30webfeeling?userID=${userID}`);
+            // window.location.href = `/homepageeverydayaccount30webfeeling?userID=${userID}`;
+            navigate(`/homepageeverydayaccount30webfeeling/userID=${userID}`)
+
+          } else {
+            // Handle the case where the userID is missing in the response
+            alert('Login successful, but userID is missing.');
+          }
+          // Redirect to another page or perform other actions upon successful login
+        } else {
+          alert('login failed');
+        }
       }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
     //   const response = await fetch("http://localhost:3001/login", {
     //     method: "POST",
     //     headers: {
@@ -47,12 +84,7 @@ const LoginPage30Page = () => {
     // } catch (error) {
     //   // Handle network or other errors
     //   console.error("Error:", error);
-     }
-     catch (error) {
-        console.error("Error:", error);
-     }
-
-  }
+    
 
   return (
     <>

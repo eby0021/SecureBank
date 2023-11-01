@@ -1,14 +1,34 @@
-import React from "react";
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Img, Line, List, Text } from "components";
-
 const HomePageEveryDayAccount30WebFeelingPage = () => {
   const navigate = useNavigate();
+  const { userID } = useParams(); // Get the userID from the URL params
+  const [balance, setBalance] = useState(null);
+  
+    useEffect(() => {
+      const apiUrl = `http://localhost:8080/sys/user/getAccountMoney?${userID}`;
+  
+      fetch(apiUrl)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then((data) => {
+          setBalance(data);
+        })
+        .catch((error) => {
+          console.error('Error fetching balance:', error);
+        });
+    }, []);
+
   const handlePayClick = () => {
-    navigate('/paysomeonebybankerrorfield30webfeeling');
+    navigate(`/paysomeonebybankerrorfield30webfeeling/${userID}`);
   }
   const handleTransactionHistoryClick = () => {
-    navigate('/transactionhistory30webfeeling');
+    navigate(`/transactionhistory30webfeeling/${userID}`);
   }
   const handleCardClick = () => {
     navigate('/addcard30webfeeling');
@@ -17,10 +37,10 @@ const HomePageEveryDayAccount30WebFeelingPage = () => {
     navigate('/billpayment30webfeeling');
   }
   const handleViewProfileClick = () => {
-    navigate('/viewprofile30webfeeling');
+    navigate(`/viewprofile30webfeeling/${userID}`);
   }
   const handleTransactionAnalyticsClick = () => {
-    navigate('/transactionanalytics30webfeeling');
+    navigate(`/transactionanalytics30webfeeling/${userID}`);
   }
   const handleChatbotClick = () => {
     navigate('/chatbotpage30webfeeling');
@@ -29,17 +49,26 @@ const HomePageEveryDayAccount30WebFeelingPage = () => {
     alert('user has been logged out')
     navigate('/loginpage30')
   }
+
   return (
     <>
       <div className="bg-white-A700 flex flex-col items-center justify-start mx-auto pb-[168px] w-full">
         <div className="flex flex-col items-center justify-start w-full">
+         
+         
+         
           <div className="font-poppins md:h-24 h-[80px] md:px-5 relative w-full">
             <div className="absolute bg-light_blue-900 border border-black-900 border-solid flex flex-col inset-x-[0] items-end justify-end mx-auto p-1.5 shadow-bs top-[0] w-full">
               <div className="flex flex-col items-center justify-start mr-[11px] w-[5%] md:w-full">
-                <Img
+                {/* <Img
                   className="h-[61px] w-[50px]"
                   src="images/img_plus.svg"
                   alt="plus"
+                /> */}
+                 <Img
+                  className="h-[61px] w-[50px]"
+                  src="../../../images/img_plus.svg"
+                  alt="plus2"
                 />
               </div>
             </div>
@@ -47,8 +76,9 @@ const HomePageEveryDayAccount30WebFeelingPage = () => {
               className="absolute h-max inset-y-[0] left-[2%] my-auto md:text-5xl text-[40px] text-white-A700 "
               size="txtPoppinsRegular64"
             >
-              Secure Bank
+              Secure Bank 
             </Text>
+            
             <button
               className="absolute bottom-[0] right-[14%] md:text-5xl text-[40px] text-white-A700 mb-[10px]"
               size="txtPoppinsRegular64"
@@ -62,22 +92,27 @@ const HomePageEveryDayAccount30WebFeelingPage = () => {
 
 
 
+
+
+
+
           <div className="flex md:flex-col flex-row font-poppins md:gap-10 gap-10 items-center justify-start 
           my-[0px] max-w-[2228px] mt-2.5 mx-auto md:px-5 w-[90%] h-[150px]">
            
            
-            <div className="bg-white-A700 border-[5px] border-light_blue-900 border-solid flex md:flex-1 sm:flex-col 
+            <div className="bg-white-A700 border-[5px] border-light_blue-900 border-solid flex md:flex-1 
+            sm:flex-col 
             flex-row sm:gap-5 items-start justify-end 
-            mb-[10px] md:mt-0 mt-[12px] p-2.5 rounded-[50px] shadow-bs3 w-[40%] md:w-full my-[0px]"
+            mb-[10px] md:mt-0 mt-[12px] px-[20px] py-[10px] rounded-[50px] shadow-bs3 w-[50%] md:w-full my-[0px]"
             onClick={handleChatbotClick}>
               <Img
                 className="h-[60px] md:h-auto sm:mt-0 mt-4 object-cover w-[60px]"
-                src="images/img_ai28146662.png"
+                src="../../../images/img_ai28146662.png"
                 alt="ai28146662"
               />
               <div>
               <Text
-                className="sm:mt-0  sm:text-4xl md:text-[25px] text-[16px] text-black-900 text-center text-shadow-ts"
+                className="sm:mt-0  sm:text-4xl md:text-[25px] text-[20px] text-black-900 text-center text-shadow-ts"
                 size="txtPoppinsBold40"
               >
                 <>
@@ -87,15 +122,8 @@ const HomePageEveryDayAccount30WebFeelingPage = () => {
                   <br />
                 </>
               </Text>
-              <div>
-            <Text
-                className="sm:mt-0  sm:text-4xl md:text-[25px] text-[16px] text-black-900 text-center text-shadow-ts"
-                size="txtPoppinsBold40"
-              >
-             Get Instant Help!
-
-              </Text>
-            </div>
+            
+            
              
               </div>
 
@@ -107,21 +135,16 @@ const HomePageEveryDayAccount30WebFeelingPage = () => {
                   <div className="flex sm:flex-col flex-row gap-[0px] items-start justify-start w-full">
                     <Img
                       className="h-[50px] "
-                      src="images/img_iconwallet.svg"
+                      src="../../../images/img_iconwallet.svg"
                       alt="iconwallet"
                     />
-                    <Text
-                      className="sm:mt-0 mt-[19px] ml-[10px] sm:text-[40px] md:text-[30px] text-[18px] text-center text-light_blue-900"
-                      size="txtPoppinsSemiBold50"
-                    >
-                      Current Balance
-                    </Text>
+
                   </div>
                   <Text
-                    className="md:ml-[0] ml-[50px] md:text-5xl text-[25px] text-center text-light_blue-900"
+                    className="md:ml-[0] ml-[50px] md:text-5xl text-[20px] text-center text-light_blue-900"
                     size="txtPoppinsSemiBold100"
-                  >
-                    $2,198
+                  >  Balance:
+                     {balance !== null ? `$${balance}` : 'Loading balance...'}
                   </Text>
                 </div>
               </div>
@@ -134,7 +157,7 @@ const HomePageEveryDayAccount30WebFeelingPage = () => {
                     <div className="absolute flex flex-col inset-x-[0] items-center justify-start mx-auto top-[0%] w-[70%]">
                       <Img
                         className="h-[50px] mt-3"
-                        src="images/img_iconuser.svg"
+                        src="../../../images/img_iconuser.svg"
                         alt="iconcards"
                       />
                       <Line className="bg-black-900 h-px mt-[13px] w-[75%]" />
@@ -213,7 +236,7 @@ const HomePageEveryDayAccount30WebFeelingPage = () => {
                     <div className="absolute flex flex-col inset-x-[0] items-center justify-start mx-auto top-[0%] w-[70%]">
                       <Img
                         className="h-[80px] mt-5"
-                        src="images/img_iconcards.svg"
+                        src="../../../images/img_iconcards.svg"
                         alt="iconcards"
                       />
                       <Line className="bg-black-900 h-px mt-[13px] w-[75%]" />
@@ -230,7 +253,7 @@ const HomePageEveryDayAccount30WebFeelingPage = () => {
                     <div className="absolute flex flex-col inset-x-[0] items-center justify-start mx-auto top-[0%] w-[70%]">
                       <Img
                         className="h-[80px] mt-5"
-                        src="images/img_iconmoneyrecive.svg"
+                        src="../../../images/img_iconmoneyrecive.svg"
                         alt="iconcards"
                       />
                       <Line className="bg-black-900 h-px mt-[13px] w-[75%]" />
@@ -304,7 +327,7 @@ const HomePageEveryDayAccount30WebFeelingPage = () => {
                     <div className="absolute flex flex-col inset-x-[0] items-center justify-start mx-auto top-[0%] w-[70%]">
                       <Img
                         className="h-[80px] mt-5"
-                        src="images/img_iconchart3.svg"
+                        src="../../../images/img_iconchart3.svg"
                         alt="iconcards"
                       />
                       <Line className="bg-black-900 h-px mt-[13px] w-[75%]" />
@@ -322,7 +345,7 @@ const HomePageEveryDayAccount30WebFeelingPage = () => {
                     <div className="absolute flex flex-col inset-x-[0] items-center justify-center mx-auto top-[0%] w-[70%]">
                       <Img
                         className="h-[80px] mt-5"
-                        src="images/img_iconwallet_light_blue_800.svg"
+                        src="../../../images/img_iconwallet_light_blue_800.svg"
                         alt="iconcards"
                       />
                       <Line className="bg-black-900 h-px mt-[13px] w-[75%]" />
@@ -375,7 +398,7 @@ const HomePageEveryDayAccount30WebFeelingPage = () => {
                   <div className="h-[508px] relative w-[28%] md:w-full">
                     <div className="bg-white-A700 h-[508px] m-auto rounded-[295px] shadow-bs7 w-full"></div>
                     <div className="absolute flex flex-col inset-x-[0] justify-start mx-auto top-[4%] w-4/5">
-                      <Img
+                      <x
                         className="h-[269px] md:ml-[0] ml-[113px]"
                         src="images/img_iconuser.svg"
                         alt="iconuser"

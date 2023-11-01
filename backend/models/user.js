@@ -20,9 +20,6 @@ const User = sequelize.define('User', {
   middleName: {
     type: DataTypes.STRING,
   },
-  fatherName: {
-    type: DataTypes.STRING,
-  },
   dateOfBirth: {
     type: DataTypes.DATEONLY, // Assuming you store only the date part of the birthdate
     allowNull: false,
